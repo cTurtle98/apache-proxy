@@ -4,7 +4,7 @@ FROM ubuntu:latest
 MAINTAINER Ciaran admin@cturtle98.com
 
 RUN apt-get update
-run apt-get upgrade -y
+RUN apt-get upgrade -y
 
 # RUN apt-get install software-properties-common &&\
 #    add-apt-repository ppa:certbot/certbot &&\
@@ -19,9 +19,9 @@ RUN a2enmod proxy rewrite &&\
 
 #RUN certbot --apache
 
-ADD cturtle98.com.conf /etc/apache2/sites-available/cturtle98.com.conf
-RUN a2dissite 000-default.conf
-RUN a2ensite cturtle98.com.conf
+#ADD cturtle98.com.conf /etc/apache2/sites-available/cturtle98.com.conf
+#RUN a2dissite 000-default.conf
+#RUN a2ensite cturtle98.com.conf
 
 
 EXPOSE 80
