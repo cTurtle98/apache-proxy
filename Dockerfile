@@ -3,6 +3,10 @@
 FROM ubuntu:latest
 MAINTAINER Ciaran admin@cturtle98.com
 
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
 RUN apt-get update
 RUN apt-get upgrade -y
 
@@ -13,8 +17,7 @@ RUN apt-get upgrade -y
 
 RUN apt-get install -y apache2
  
-RUN a2enmod proxy rewrite &&\
-    echo "ServerName cturtle98.com" >> /etc/apache2/apache2.conf &&\
+RUN a2enmod proxy proxy_http rewrite &&\
     service apache2 restart
 
 #RUN certbot --apache
