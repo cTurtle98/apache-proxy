@@ -1,0 +1,11 @@
+#1/bin/sh
+
+docker stop apache-proxy
+
+docker rm $(docker ps -a -q)
+
+docker run \
+-d \
+--name apache-proxy \
+-p 80:80 \
+apache-proxy:latest

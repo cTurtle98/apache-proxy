@@ -1,3 +1,5 @@
 #!/bin/sh
 
+docker image prune
+
 docker build -t 'apache-proxy' .
