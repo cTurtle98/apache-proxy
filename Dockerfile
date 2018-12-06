@@ -17,8 +17,8 @@ RUN apt-get upgrade -y
 
 RUN apt-get install -y apache2
  
-#RUN a2enmod proxy proxy_http rewrite &&\
-#    service apache2 restart
+RUN a2enmod proxy proxy_http rewrite &&\
+    service apache2 restart
 
 #RUN certbot --apache
 
@@ -28,3 +28,5 @@ RUN apt-get install -y apache2
 
 
 EXPOSE 80
+
+CMD apachectl -D FOREGROUND
