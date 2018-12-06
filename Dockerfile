@@ -22,9 +22,9 @@ RUN a2enmod proxy proxy_http rewrite &&\
 
 #RUN certbot --apache
 
-#ADD cturtle98.com.conf /etc/apache2/sites-available/cturtle98.com.conf
-#RUN a2dissite 000-default.conf
-#RUN a2ensite cturtle98.com.conf
+ADD cturtle98.com.conf /etc/apache2/sites-available/cturtle98.com.conf
+RUN a2dissite 000-default.conf
+RUN a2ensite cturtle98.com.conf
 
 
 EXPOSE 80
