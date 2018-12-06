@@ -29,4 +29,13 @@ RUN a2ensite cturtle98.com.conf
 
 EXPOSE 80
 
+#webpy
+EXPOSE 8088
+
+#zonemidner
+EXPOSE 8005
+
+#emby media
+EXPOSE 8096
+
 CMD apachectl -D FOREGROUND
