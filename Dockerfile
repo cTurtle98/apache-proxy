@@ -3,14 +3,8 @@
 FROM ubuntu:latest
 MAINTAINER Ciaran admin@cturtle98.com
 
-#input port
-EXPOSE 80
-#webpy
-EXPOSE 8088
-#zonemidner
-EXPOSE 8005
-#emby media
-EXPOSE 8096
+#input WEBPY ZM EMBY
+EXPOSE 80 8088 8005 8096
 
 RUN apt-get update
 RUN apt-get upgrade -y
