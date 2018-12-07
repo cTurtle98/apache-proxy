@@ -17,7 +17,7 @@ RUN apt-get upgrade -y
 
 RUN apt-get install -y apache2
  
-RUN a2enmod proxy proxy_http rewrite &&\
+RUN a2enmod proxy proxy_http proxy_html rewrite &&\
     service apache2 restart
 
 RUN a2dissite 000-default.conf
