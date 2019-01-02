@@ -9,7 +9,7 @@ EXPOSE 80 8088 8005 8096
 RUN apt-get update
 RUN apt-get upgrade -y
 
-RUN apt-get install -y apache2
+RUN apt-get install -y apache2 libapache2-mod-gnutls
  
 RUN a2enmod proxy proxy_http proxy_html rewrite mod_ssl &&\
     service apache2 restart
