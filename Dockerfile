@@ -11,7 +11,7 @@ RUN apt-get upgrade -y
 
 RUN apt-get install -y apache2 libapache2-mod-gnutls
  
-RUN a2enmod proxy proxy_http proxy_html rewrite mod_ssl &&\
+RUN a2enmod proxy proxy_http proxy_html rewrite ssl &&\
     service apache2 restart
 
 RUN a2dissite 000-default.conf
