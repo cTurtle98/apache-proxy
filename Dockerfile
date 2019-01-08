@@ -18,6 +18,10 @@ RUN a2enmod proxy &&\
     # a2enmod ssl &&\
     service apache2 restart
 
+RUN echo - * 80 &&\
+    ls /etc/apache2/sites-available/ &&\
+    echo - * 80
+
 RUN a2dissite 000-default.conf
 ADD cturtle98.com.conf /etc/apache2/sites-available/cturtle98.com.conf
 RUN a2ensite cturtle98.com.conf
