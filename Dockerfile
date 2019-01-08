@@ -15,7 +15,7 @@ RUN a2enmod proxy &&\
     a2enmod proxy_http &&\
     a2enmod proxy_html &&\
     a2enmod rewrite &&\
-    # a2enmod ssl &&\
+    a2enmod ssl &&\
     service apache2 restart
 
 RUN a2dissite 000-default.conf \
